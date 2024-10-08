@@ -1,25 +1,74 @@
 <?php
 
-abstract class Payment
+// BAD
+
+// 親クラス
+// abstract class Animal
+// {
+//     public function walk()
+//     {
+//         echo "Walking";
+//     }
+// }
+
+
+// // 子クラス
+// class Dog extends Animal
+// {
+//     public function walk()
+//     {
+//         echo "Dog is walking";
+//     }
+// }
+
+
+// // 子クラス
+// class Fish extends Animal
+// {
+//     public function walk()
+//     {
+//         // 魚は泳げないので例外をスロー
+//         throw new Exception('Fish cannot walk');
+//     }
+// }
+
+
+// GOOD
+
+// 動物規定クラス
+abstract class Animal
 {
-    abstract public function order($price);
-    abstract public function cancel($price);
+    public function eat(){}
+}
+
+// 歩く動物動物クラス
+abstract class WalkingAnimal extends Animal
+{
+    public function walk(){}
+}
+
+// 泳ぐ動物規定クラス
+abstract class SwimmingAnimal extends Animal
+{
+    public function swim(){}
 }
 
 
-class CreditCard extends Payment
+// 子クラス
+class Dog extends WalkingAnimal
 {
-}
-
-
-class Exchange extends Payment
-{
-    public function order($price)
+    public function walk()
     {
-        throw new Exception('Exchange order is not allowed');
+        echo "Dog is walking";
     }
-    public function cancel($price)
+}
+
+
+// 子クラス
+class Fish extends SwimmingAnimal
+{
+    public function swim()
     {
-        throw new Exception('Exchange cancel is not allowed');
+        echo "Fish is swimming";
     }
 }

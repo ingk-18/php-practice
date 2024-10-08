@@ -1,16 +1,17 @@
 <?php
 
+// BAD
+// class Payment
+// {
+//     public function orderByCash($price){}
+//     public function cancelByCash($price){}
 
-class Payment
-{
-    public function orderByCash($price){}
-    public function cancelByCash($price){}
-
-    public function orderByCreditCard($price){}
-    public function cancelByCreditCard($price){}
-}
+//     public function orderByCreditCard($price){}
+//     public function cancelByCreditCard($price){}
+// }
 
 
+// GOOD
 
 // 抽象クラスとしてのPayment
 abstract class Payment

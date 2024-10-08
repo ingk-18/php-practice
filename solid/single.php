@@ -2,14 +2,14 @@
 
 
 // 悪い例
-class Payment
-{
-    public function orderByCash($price){}
-    public function cancelByCash($price){}
+// class Payment
+// {
+//     public function orderByCash($price){}
+//     public function cancelByCash($price){}
 
-    public function orderByCreditCard($price){}
-    public function cancelByCreditCard($price){}
-}
+//     public function orderByCreditCard($price){}
+//     public function cancelByCreditCard($price){}
+// }
 
 // 良い例
 
